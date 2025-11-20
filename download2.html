@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Download Surah - Duha Qur'an</title>
+<style>
+  :root {
+    --main:#1abc9c;
+    --dark:#2c3e50;
+    --light:#f4f6f8;
+  }
+  body {
+    margin:0;
+    font-family:"Poppins","Segoe UI",sans-serif;
+    background:var(--light);
+    color:var(--dark);
+    line-height:1.7;
+  }
+
+  /* Sidebar */
+.sidebar { 
+height: 100%;
+ width: 0;
+ position: fixed;
+ top: 0; left: 0; 
+ background-color: #2c3e50;
+ overflow-x: hidden;
+ transition: 0.4s ease; 
+ padding-top: 60px; 
+ z-index: 1000; 
+ box-shadow: 2px 0 8px rgba(0,0,0,0.3); 
+}
+.sidebar a { 
+padding: 14px 24px; 
+text-decoration: none; 
+font-size: 18px; color: #ecf0f1; 
+display: block; 
+transition: background 0.3s; 
+}
+.sidebar a:hover { 
+  background-color: #1abc9c; 
+  border-radius: 6px;
+ }
+.sidebar .closebtn {
+position: absolute;
+top: 20px; 
+right: 25px; 
+font-size: 30px;
+color: #ecf0f1; 
+cursor: pointer; }
+
+/* Header */
+.header { 
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #2c3e50; 
+padding: 12px 20px; 
+color: #fff; 
+box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+position: sticky; top: 0;
+z-index: 100;
+
+}
+.logo { 
+display: flex; 
+align-items: center;
+font-size: 22px; 
+font-weight: bold; 
+letter-spacing: 1px; 
+cursor: pointer; 
+transition: transform 0.3s; 
+}
+.logo:hover { 
+transform: scale(1.05);
+ }
+.circle-logo {
+   width: 42px; 
+   height: 42px; 
+   border-radius: 50%; 
+   background: #1abc9c; 
+   color: white; 
+   font-weight: bold; 
+   font-size: 20px; display: flex; 
+   align-items: center; 
+   justify-content: center; 
+   margin-right: 10px; 
+   border: 2px solid #fff; 
+   box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+  }
+  /*hambuger*/
+.hamburger {
+   font-size: 26px; cursor: pointer; 
+   color: white;
+    background: #1abc9c; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2); 
+    transition: background 0.3s;
+   }
+.hamburger:hover { 
+  background: #16a085;
+ }
+
+  h1{text-align:center;color:var(--dark);margin:35px 0 15px;}
+  .content{
+    max-width:950px;margin:auto;background:white;
+    padding:30px;border-radius:14px;
+    box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  }
+
+  ul{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:16px;list-style:none;padding:0;margin:0;
+  }
+  li{
+    background:#fff;border-radius:10px;
+    padding:16px;box-shadow:0 2px 6px rgba(0,0,0,0.1);
+    display:flex;justify-content:space-between;align-items:center;
+    transition:0.3s;
+  }
+  li:hover{transform:translateY(-3px);}
+  .downloadBtn{
+    background:var(--main);color:white;border:none;
+    padding:6px 14px;border-radius:6px;cursor:pointer;
+  }
+  .backBtn{
+    background:var(--main);color:white;border:none;
+    padding:8px 16px;border-radius:6px;cursor:pointer;margin-bottom:15px;
+  }
+  .ayah{margin-bottom:15px;border-bottom:1px solid #eee;padding-bottom:8px;}
+  .ayah-en{color:#7f8c8d;font-style:italic;margin-bottom:3px;}
+  .ayah-ar{text-align:right;direction:rtl;font-size:20px;font-weight:bold;}
+
+  .footer{text-align:center;padding:18px;background:var(--dark);
+    color:#ecf0f1;margin-top:40px;font-size:14px;}
+  .footer a{color:var(--main);text-decoration:none;margin:0 8px;}
+
+  @media(max-width:768px){
+    .header{flex-direction:column;text-align:center;}
+    .hamburger{margin-top:8px;}
+    .content{margin:15px;padding:20px;}
+    ul{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo"><div class="circle-logo">M</div>Duha Qur'an</div>
+  <span class="hamburger" onclick="openNav()">&#9776;</span>
+</div>
+
+<div id="mySidebar" class="sidebar">
+  <span class="closebtn" onclick="closeNav()">&times;</span>
+  <a href="index1.html">Home</a>
+  <a href="about1.html">About</a>
+  <a href="download2.html">Download</a>
+</div>
+
+<h1>Download Surahs</h1>
+<div class="content" id="mainContent">
+  <ul id="surahList"><li>Loading Surahs...</li></ul>
+  <p id="status"></p>
+</div>
+
+<div class="footer">
+  &copy; 2025 Duha Qur'an | Designed with ❤️ |
+  <a href="#">Facebook</a> <a href="#">Instagram</a>
+</div>
+
+<script>
+function openNav(){document.getElementById("mySidebar").style.width="250px";}
+function closeNav(){document.getElementById("mySidebar").style.width="0";}
+
+const surahListEl=document.getElementById("surahList");
+const contentDiv=document.getElementById("mainContent");
+const status=document.getElementById("status");
+
+fetch("https://api.alquran.cloud/v1/surah")
+.then(r=>r.json())
+.then(d=>{
+  surahListEl.innerHTML="";
+  d.data.forEach(s=>{
+    const li=document.createElement("li");
+    li.innerHTML=`<span>${s.number}. ${s.englishName} (${s.name})</span>
+                  <button class="downloadBtn">Open</button>`;
+    li.querySelector(".downloadBtn").onclick=()=>openSurah(s);
+    surahListEl.appendChild(li);
+  });
+});
+
+function openSurah(surah){
+  contentDiv.innerHTML=`<button class="backBtn" onclick="location.reload()">← Back</button>
+                        <h2>${surah.englishName} (${surah.name})</h2><p>Loading...</p>`;
+  Promise.all([
+    fetch(`https://api.alquran.cloud/v1/surah/${surah.number}/ar.alafasy`).then(r=>r.json()),
+    fetch(`https://api.alquran.cloud/v1/surah/${surah.number}/en.asad`).then(r=>r.json())
+  ]).then(([a,e])=>{
+    const ar=a.data.ayahs, en=e.data.ayahs;
+    contentDiv.innerHTML=`<button class="backBtn" onclick="location.reload()">← Back</button>
+    <h2>${surah.englishName} (${surah.name})</h2>
+    <button class="downloadBtn" onclick="downloadSurah(${surah.number},'${surah.englishName}','${surah.name}')">⬇️ Download</button>`;
+    ar.forEach((v,i)=>{
+      const div=document.createElement("div");
+      div.className="ayah";
+      div.innerHTML=`<div class="ayah-en">${en[i].text}</div><div class="ayah-ar">${v.text}</div>`;
+      contentDiv.appendChild(div);
+    });
+  });
+}
+
+function downloadSurah(id,en,ar){
+  Promise.all([
+    fetch(`https://api.alquran.cloud/v1/surah/${id}/ar.alafasy`).then(r=>r.json()),
+    fetch(`https://api.alquran.cloud/v1/surah/${id}/en.asad`).then(r=>r.json())
+  ]).then(([a,e])=>{
+    let t=`Surah ${en} (${ar})\n\n`;
+    a.data.ayahs.forEach((v,i)=>t+=`EN: ${e.data.ayahs[i].text}\nAR: ${v.text}\n\n`);
+    const blob=new Blob([t],{type:"text/plain"});
+    const link=document.createElement("a");
+    link.href=URL.createObjectURL(blob);
+    link.download=`Surah_${en}.txt`;
+    link.click();
+  });
+}
+</script>
+</body>
+</html>

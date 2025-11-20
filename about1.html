@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - Duha Qur'an</title>
+<style>
+:root { --main:#1abc9c; 
+  --dark:#2c3e50; 
+  --light:#f4f6f8;
+ }
+body { 
+  margin:0; 
+  font-family:"Poppins","Segoe UI",sans-serif;
+   background:var(--light); color:var(--dark); 
+  }
+.header {
+  display:flex; 
+  justify-content:space-between; 
+  align-items:center;
+  background:var(--dark); 
+  color:white; 
+  padding:14px 20px;
+   position:sticky; top:0;
+}
+/* Sidebar */
+.sidebar { 
+height: 100%;
+ width: 0;
+ position: fixed;
+ top: 0; left: 0; 
+ background-color: #2c3e50;
+ overflow-x: hidden;
+ transition: 0.4s ease; 
+ padding-top: 60px; 
+ z-index: 1000; 
+ box-shadow: 2px 0 8px rgba(0,0,0,0.3); 
+}
+.sidebar a { 
+padding: 14px 24px; 
+text-decoration: none; 
+font-size: 18px; color: #ecf0f1; 
+display: block; 
+transition: background 0.3s; 
+}
+.sidebar a:hover { 
+  background-color: #1abc9c; 
+  border-radius: 6px;
+ }
+.sidebar .closebtn {
+position: absolute;
+top: 20px; 
+right: 25px; 
+font-size: 30px;
+color: #ecf0f1; 
+cursor: pointer; }
+
+/* Header */
+.header { 
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #2c3e50; 
+padding: 12px 20px; 
+color: #fff; 
+box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+position: sticky; top: 0;
+z-index: 100;
+
+}
+.logo { 
+display: flex; 
+align-items: center;
+font-size: 22px; 
+font-weight: bold; 
+letter-spacing: 1px; 
+cursor: pointer; 
+transition: transform 0.3s; 
+}
+.logo:hover { 
+transform: scale(1.05);
+ }
+.circle-logo {
+   width: 42px; 
+   height: 42px; 
+   border-radius: 50%; 
+   background: #1abc9c; 
+   color: white; 
+   font-weight: bold; 
+   font-size: 20px; display: flex; 
+   align-items: center; 
+   justify-content: center; 
+   margin-right: 10px; 
+   border: 2px solid #fff; 
+   box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+  }
+  /*hambuger*/
+.hamburger {
+   font-size: 26px; cursor: pointer; 
+   color: white;
+    background: #1abc9c; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2); 
+    transition: background 0.3s;
+   }
+.hamburger:hover { 
+  background: #16a085;
+ }
+
+h1 { text-align:center;
+   margin-top:35px; 
+  }
+.content { 
+  max-width:900px; 
+  margin:auto; 
+  background:white; 
+  padding:25px; border-radius:12px; 
+  box-shadow:0 4px 10px rgba(0,0,0,0.1); 
+}
+.footer { 
+  text-align:center; 
+  padding:18px; 
+  margin-top:40px;
+  background:var(--dark); 
+  color:#ecf0f1; 
+  font-size:14px;
+ }
+.footer a {
+   color:var(--main);
+    margin:0 8px; 
+  }
+@media(max-width:768px){ 
+  .header{
+    flex-direction:column;
+  text-align:center;
+} 
+  
+.hamburger{
+    margin-top:8px;
+  } 
+  .content{
+    margin:15px;
+    padding:20px;
+    } 
+    }
+</style>
+<script>
+function openNav(){document.getElementById("mySidebar").style.width="250px";}
+function closeNav(){document.getElementById("mySidebar").style.width="0";}
+</script>
+</head>
+<body>
+<div class="header">
+  <div class="logo"><div class="circle-logo">M</div>Duha Qur'an</div>
+  <span class="hamburger" onclick="openNav()">&#9776;</span>
+</div>
+
+<div id="mySidebar" class="sidebar">
+  <span class="closebtn" onclick="closeNav()">&times;</span>
+  <a href="index.html">Home</a>
+  <a href="about1.html">About</a>
+  <a href="download2.html">Download</a>
+</div>
+
+<h1>About DUHA</h1>
+<div class="content">
+    <p>
+      All praise is due to Allah, the Lord of the worlds. Peace and blessings be upon His noble Messenger,
+      Muhammad ﷺ, his family, and his companions.</p>
+      <p>
+      <b><I>DUHA </I></b> is a group of individual muslim dedicated to help 
+      brothers and sisters with an online qur'an website ,in case of emergence about reading
+      al qur'an when it is not close or not available at the moment. The Qur'an strongly encourages 
+      us to contribute and sacrifice (whether small or big) for the sake of Allah.
+    </p>
+    <p>
+      The Qur'an strongly encourages us to contribute and sacrifice (whether small or big) for
+       the sake of Allah.
+       Allah Subhanahu Wata alla said:
+    </p>
+    <p>
+      Dear brothers and sisters, Allah has honored us with Islam and with the Qur'an, a light and guidance 
+      for all of humanity. To support this religion and spread the Book of Allah is one of the greatest acts of worship,
+      for it continues to benefit people even after we return to Allah.
+      Allah Almighty commands us:
+      </p>
+      ﴿أَنفِقُوا مِمَّا رَزَقْنَاكُم مِّن قَبْلِ أَن يَأْتِيَ يَوْمٌ لَّا بَيْعٌ فِيهِ وَلَا خُلَّةٌ وَلَا شَفَاعَةٌ﴾
+      "Spend from what We have provided for you before there comes a Day when there will be no bargaining, no friendship,
+       and no intercession."
+      [Al-Baqarah 2:254]
+      And He says:
+      ﴿مَثَلُ الَّذِينَ يُنفِقُونَ أَمْوَالَهُمْ فِي سَبِيلِ اللَّهِ كَمَثَلِ حَبَّةٍ أَنبَتَتْ سَبْعَ سَنَابِلَ فِي كُلِّ سُنبُلَةٍ مِّائَةُ حَبَّةٍ ۗ وَاللَّهُ يُضَاعِفُ لِمَن يَشَاءُ﴾
+      <i>"The example of those who spend their wealth in the way of Allah is like a seed that grows seven spikes; in each spike 
+       is a hundred grains. And Allah multiplies [the reward] for whom He wills."</i>
+      [Al-Baqarah 2:261]
+      The Messenger of Allah ﷺ also encouraged us not to look down on any contribution, no matter how small. He said:
+      «اتَّقُوا النَّارَ وَلَوْ بِشِقِّ تَمْرَةٍ»
+     "Protect yourselves from the Hellfire, even with half of a date (in charity)."
+      [Bukhari & Muslim]
+<p>
+      Whoever contributes to spreading the Qur'an, building a masjid, printing an Islamic book, teaching a student, or 
+      supporting the poor, Allah records for him a continuous charity (sadaqah jariyah) whose reward never ends. 
+      The Prophet ﷺ said:
+     «مَنْ دَلَّ عَلَى خَيْرٍ فَلَهُ مِثْلُ أَجْرِ فَاعِلِهِ»
+      <i>"Whoever guides someone to goodness will have a reward like the one who did it."</i>
+      [Muslim]
+      </p>
+     <p>
+      Therefore, let us give from what Allah has given us, whether much or little, in order to support His religion. 
+      Let us take part in spreading the Qur'an, for every letter read by a believer because of your effort will be a light 
+      for you on the Day of Judgment.May Allah accept from us our small contributions and multiply them like mountains. 
+      May He make us among those who honor His Book and support His Deen with our wealth, our time, and our efforts.
+
+    </p>
+</div>
+<div class="footer">
+  &copy; 2025 Duha Qur'an | Designed with ❤️ |
+  <a href="#">Facebook</a><a href="#">Instagram</a>
+</div>
+</body>
+</html>

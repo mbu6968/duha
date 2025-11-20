@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Duha Qur'an - Surahs</title>
+  <style>
+    /* ORIGINAL STYLES (kept) */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #2c3e50;
+      line-height: 1.7;
+    }
+    .header {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center;
+      background: #2c3e50; 
+      color: white; 
+      padding: 12px 20px;
+    }
+   /* Sidebar */
+.sidebar { 
+height: 100%;
+ width: 0;
+ position: fixed;
+ top: 0; left: 0; 
+ background-color: #2c3e50;
+ overflow-x: hidden;
+ transition: 0.4s ease; 
+ padding-top: 60px; 
+ z-index: 1000; 
+ box-shadow: 2px 0 8px rgba(0,0,0,0.3); 
+}
+.sidebar a { 
+padding: 14px 24px; 
+text-decoration: none; 
+font-size: 18px; color: #ecf0f1; 
+display: block; 
+transition: background 0.3s; 
+}
+.sidebar a:hover { 
+  background-color: #1abc9c; 
+  border-radius: 6px;
+ }
+.sidebar .closebtn {
+position: absolute;
+top: 20px; 
+right: 25px; 
+font-size: 30px;
+color: #ecf0f1; 
+cursor: pointer; }
+
+/* Header */
+.header { 
+display: flex;
+align-items: center;
+justify-content: space-between;
+background: #2c3e50; 
+padding: 12px 20px; 
+color: #fff; 
+box-shadow: 0 3px 8px rgba(0,0,0,0.2); 
+position: sticky; top: 0;
+z-index: 100;
+
+}
+.logo { 
+display: flex; 
+align-items: center;
+font-size: 22px; 
+font-weight: bold; 
+letter-spacing: 1px; 
+cursor: pointer; 
+transition: transform 0.3s; 
+}
+.logo:hover { 
+transform: scale(1.05);
+ }
+.circle-logo {
+   width: 42px; 
+   height: 42px; 
+   border-radius: 50%; 
+   background: #1abc9c; 
+   color: white; 
+   font-weight: bold; 
+   font-size: 20px; display: flex; 
+   align-items: center; 
+   justify-content: center; 
+   margin-right: 10px; 
+   border: 2px solid #fff; 
+   box-shadow: 0 2px 6px rgba(0,0,0,0.2); 
+  }
+  /*hambuger*/
+.hamburger {
+   font-size: 26px; cursor: pointer; 
+   color: white;
+    background: #1abc9c; 
+    padding: 8px 12px; 
+    border-radius: 6px; 
+    box-shadow: 2px 2px 6px rgba(0,0,0,0.2); 
+    transition: background 0.3s;
+   }
+.hamburger:hover { 
+  background: #16a085;
+ }
+
+       
+    h1 { 
+      text-align: center; 
+      color: #34495e; 
+      margin: 35px 0 15px;
+     }
+    .content {
+      max-width: 900px;
+       margin: auto; 
+       background: white; 
+       padding: 25px;
+      border-radius: 12px;
+       box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    #searchInput {
+      width: 100%; 
+      max-width: 400px; 
+      display: block;
+      margin: 0 auto 25px; 
+      padding: 10px; 
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    ul {
+      list-style: none; padding: 0;
+      display: grid; 
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 16px;
+    }
+    li {
+      background: #fff; padding: 14px; border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      display: flex; justify-content: space-between; align-items: center;
+      cursor: pointer;
+    }
+    
+    .footer {
+      
+      text-align: center; 
+      padding: 18px; 
+      background: #2c3e50;
+      color: #ecf0f1; 
+      font-size: 14px; 
+      margin-top: 40px;
+    }
+    .footer a {
+       color: #1abc9c; 
+       text-decoration: none;
+        margin: 0 8px; 
+    
+      }
+    .ayah { margin-bottom: 15px; 
+      border-bottom: 1px solid #eee; 
+      padding-bottom: 8px; 
+    }
+    .ayah-en { 
+      color: #7f8c8d; 
+      font-style: italic; 
+    }
+    .ayah-ar { 
+      text-align: right; 
+      direction: rtl; 
+      font-size: 20px; 
+      font-weight: bold; 
+    }
+    .backBtn {
+      background: #1abc9c; color: white; border: none;
+      padding: 8px 14px; border-radius: 6px; cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    /* Responsiveness (keeps original look but flexible) */
+    @media (max-width: 768px) {
+      .header { flex-direction: column; text-align: center; }
+      .hamburger { margin-top: 10px; }
+      .content { margin: 10px; padding: 20px; }
+      ul { grid-template-columns: 1fr; gap: 12px; }
+      li { flex-direction: column; align-items: flex-start; gap: 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo"><div class="circle-logo">M</div>Duha Qur'an</div>
+    <span class="hamburger" onclick="openNav()">&#9776;</span>
+  </div>
+
+  <div id="mySidebar" class="sidebar">
+    <span class="closebtn" onclick="closeNav()">&times;</span>
+    <a href="index1.html">Home</a>
+    <a href="about1.html">About</a>
+    <a href="download2.html">Download</a>
+  </div>
+
+  <h1>Qur'an Surahs</h1>
+
+  <!-- content wrapper -->
+  <div class="content" id="mainContent">
+    <input type="text" id="searchInput" placeholder="Search Surah...">
+    <ul id="surahList"><li>Loading Surahs...</li></ul>
+  </div>
+
+  <div class="footer">
+    &copy; 2025 Duha Qur'an | Designed with ❤️ |
+    <a href="#">Facebook</a> <a href="#">Instagram</a>
+  </div>
+
+  <script>
+    // sidebar controls
+    function openNav(){ document.getElementById("mySidebar").style.width = "250px"; }
+    function closeNav(){ document.getElementById("mySidebar").style.width = "0"; }
+
+    // DOM elements
+    const surahList = document.getElementById("surahList");
+    const searchInput = document.getElementById("searchInput");
+    const mainContent = document.getElementById("mainContent");
+
+    // fetch and render surah list
+    let allSurahs = [];
+    fetch("https://api.alquran.cloud/v1/surah")
+      .then(res => res.json())
+      .then(result => {
+        allSurahs = result.data || [];
+        renderList(allSurahs);
+      })
+      .catch(err => {
+        console.error(err);
+        surahList.innerHTML = "<li>Error loading Surahs</li>";
+      });
+
+    function renderList(list) {
+      surahList.innerHTML = "";
+      if(!list || list.length === 0){
+        surahList.innerHTML = "<li>No Surahs found</li>";
+        return;
+      }
+      list.forEach(surah => {
+        const li = document.createElement("li");
+        // keep layout identical to original: left text, optional right icon (not required)
+        li.innerHTML = `<div>
+                          <strong>${surah.number}. ${surah.englishName}</strong><br>
+                          <span style="color:#7f8c8d">${surah.name}</span>
+                        </div>`;
+        li.onclick = () => openSurah(surah);
+        surahList.appendChild(li);
+      });
+    }
+
+    // search handler (flexible)
+    searchInput.addEventListener("input", () => {
+      const q = (searchInput.value || "").toLowerCase();
+      const filtered = allSurahs.filter(s => 
+        s.englishName.toLowerCase().includes(q) || s.name.toLowerCase().includes(q)
+      );
+      renderList(filtered);
+    });
+
+    // open and display surah (arabic + english)
+    function openSurah(surah) {
+      // render loading state inside same .content area (no style changes)
+      mainContent.innerHTML = `<button class="backBtn" onclick="location.reload()">← Back</button>
+        <h2>${surah.englishName} (${surah.name})</h2>
+        <p>Loading verses...</p>`;
+
+      // fetch Arabic and English editions
+      Promise.all([
+        fetch(`https://api.alquran.cloud/v1/surah/${surah.number}/ar.alafasy`).then(r => r.json()),
+        fetch(`https://api.alquran.cloud/v1/surah/${surah.number}/en.asad`).then(r => r.json())
+      ])
+      .then(([arabRes, engRes]) => {
+        if(!arabRes || !arabRes.data || !engRes || !engRes.data){
+          mainContent.innerHTML = `<button class="backBtn" onclick="location.reload()">← Back</button>
+            <h2>${surah.englishName} (${surah.name})</h2>
+            <p>Error loading verses.</p>`;
+          return;
+        }
+        const arAyahs = arabRes.data.ayahs || [];
+        const enAyahs = engRes.data.ayahs || [];
+        mainContent.innerHTML = `<button class="backBtn" onclick="location.reload()">← Back</button>
+          <h2>${surah.englishName} (${surah.name})</h2>`;
+        arAyahs.forEach((ayah, idx) => {
+          const enText = enAyahs[idx] ? enAyahs[idx].text : "";
+          const div = document.createElement("div");
+          div.className = "ayah";
+          div.innerHTML = `<div class="ayah-en">${enText}</div><div class="ayah-ar">${ayah.text}</div>`;
+          mainContent.appendChild(div);
+        });
+      })
+      .catch(err => {
+        console.error(err);
+        mainContent.innerHTML = `<button class="backBtn" onclick="location.reload()">← Back</button>
+          <h2>${surah.englishName} (${surah.name})</h2>
+          <p>Error loading verses.</p>`;
+      });
+    }
+  </script>
+</body>
+</html>
